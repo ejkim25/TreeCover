@@ -4,6 +4,4 @@ This is a model extension of the paper "Are strong fire–vegetation feedbacks n
 
 Bimodality check using the followings instead of large scale of productivity and mortality of Good 2016:
 
--Precipitation in function of Tree cover
--Productivity in function of Trecipitation
--Tree cover in function of Productivity
+Precipitation in function of Tree cover -> Productivity in function of Trecipitation -> Tree cover in function of Productivity
