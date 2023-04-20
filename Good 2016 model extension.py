@@ -8,7 +8,7 @@
 # - Productivity noise's std=0.05
 # - P0 = 300mm/yr; k = 3500
 # - Taken only stationary part
-# - Check both: with and without noise (100~300mm/yr) in precipitation in dxdt
+# - Should check both: with and without noise (100~300mm/yr) in precipitation in dxdt
 
 # In[118]:
 
@@ -51,7 +51,7 @@ def productivity(p):       # productivity (beta) in function of precipitation (P
 
 def dxdt(x, p0, k):  # control here with or w/o noise in precipitation
     " f(x) = beta*x*(1-x)-m*x "
-    nu = 300                                                   # precipitation noise level 100~300mm/year; 0 for no noise
+    nu = 300                                                 # precipitation noise level 100~300mm/year; 0 for no noise
     precip = p0 + k*x + nu*np.random.normal(0, 1)            # graph: p0 - k => how many solutions for each case; T0=0 and T0=1
     prod = productivity(precip) + np.random.normal(0, 0.05)
     return prod*x*(1-x)-mort*x, prod/mort, precip, productivity(precip)
@@ -62,7 +62,7 @@ np.random.seed(22)
 time = np.linspace(0, 1000, num=10000)
 P0 = 300
 k_slope = 2000
-mu = 0.05  # noise level in random generation size for tree cover
+mu = 0.05   # noise level in random generation size for tree cover
 
 # Tree cover generation from T0=0.0 and T0=1.0 ========================================
 dTdt = np.zeros((len(time),2))
@@ -171,7 +171,7 @@ plt.ylabel('Frequency')
 plt.show()
 
 
-# ## 2. Multiple p0 and k
+# ## 2. Multiple P0 and k
 
 # In[128]:
 
@@ -214,7 +214,7 @@ def productivity(p):  # productivity (beta) in function of precipitation (P) - "
 
 def dxdt(x, p0, k):
     " f(x) = beta*x*(1-x)-m*x "
-    precip = p0 + k*x                # graph: p0 - k => how many solutions for each case; T0=0 and T0=1
+    precip = p0 + k*x                
     prod = productivity(precip) + np.random.normal(0, 0.05)
     return prod*x*(1-x)-mort*x, prod/mort, precip, productivity(precip)
 
@@ -224,8 +224,8 @@ np.random.seed(22)
 time = np.linspace(0, 100, num=1000)
 k_range = np.arange(0, 4000, 100)
 P0_range = np.arange(0, 2000, 100)
-mu = 0.05                                                 # noise level in random generation size for tree cover
-nu = 0  # w/o noise in P0 and k
+mu = 0.05   # noise level in random generation size for tree cover
+nu = 0   # w/o noise in P0 and k
 
 # Tree cover generation from T0=0.0 ======================================================================================
 dTdt_y = np.zeros((len(time), len(k_range), len(P0_range)))
@@ -237,7 +237,7 @@ T_y = np.zeros((len(time), len(k_range), len(P0_range)))
 P0_y = np.zeros((len(time), len(k_range), len(P0_range)))
 k_y = np.zeros((len(time), len(k_range), len(P0_range)))
 
-T0_y = np.full((len(k_range), len(P0_range)), 0.0)            #Tree Cover initialization
+T0_y = np.full((len(k_range), len(P0_range)), 0.0)   #Tree Cover initialization
 
 T_y[0] = T0_y   # state initialization
 for j, P0 in enumerate(P0_range):
@@ -268,7 +268,7 @@ T_z = np.zeros((len(time), len(k_range), len(P0_range)))
 P0_z = np.zeros((len(time), len(k_range), len(P0_range)))
 k_z = np.zeros((len(time), len(k_range), len(P0_range)))
 
-T0_z = np.full((len(k_range), len(P0_range)), 1.0)            #Tree Cover initialization
+T0_z = np.full((len(k_range), len(P0_range)), 1.0)   #Tree Cover initialization
 
 T_z[0] = T0_z   # state initialization
 for j, P0 in enumerate(P0_range):
