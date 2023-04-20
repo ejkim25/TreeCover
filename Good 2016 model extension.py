@@ -1,7 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
+# =======================================================================================================================================================
 # ## 1. Fixed P0 and k (manually varying P0 and k)
+# =======================================================================================================================================================
 
 # - Combined two initializations T0=0 and T0=1
 # - Noise level for tree cover: mu=0.05
@@ -9,9 +8,6 @@
 # - P0 = 300mm/yr; k = 3500
 # - Taken only stationary part
 # - Should check both: with and without noise (100~300mm/yr) in precipitation in dxdt
-
-# In[118]:
-
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -171,10 +167,9 @@ plt.ylabel('Frequency')
 plt.show()
 
 
-# ## 2. Multiple P0 and k
-
-# In[128]:
-
+# =======================================================================================================================================================
+# ## 2. Multiple P0 and k 
+# =======================================================================================================================================================
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -227,7 +222,7 @@ P0_range = np.arange(0, 2000, 100)
 mu = 0.05   # noise level in random generation size for tree cover
 nu = 0   # w/o noise in P0 and k
 
-# Tree cover generation from T0=0.0 ======================================================================================
+# Tree cover generation from T0=0.0 ===================================================
 dTdt_y = np.zeros((len(time), len(k_range), len(P0_range)))
 bm_y = np.zeros((len(time), len(k_range), len(P0_range)))
 P_y = np.zeros((len(time), len(k_range), len(P0_range)))
@@ -258,7 +253,7 @@ for j, P0 in enumerate(P0_range):
             elif T_y[n+1,i,j]<0:
                 T_y[n+1,i,j]=0
                 
-# Tree cover generation from T0=1.0 ======================================================================================
+# Tree cover generation from T0=1.0 ===================================================
 dTdt_z = np.zeros((len(time), len(k_range), len(P0_range)))
 bm_z = np.zeros((len(time), len(k_range), len(P0_range)))
 P_z = np.zeros((len(time), len(k_range), len(P0_range)))
