@@ -145,7 +145,7 @@ plt.xlabel('\u03B2')
 plt.ylabel('Tree cover') 
 plt.show()
 
-# Graph Tree cover - Productivity/Mortality
+# Tree cover - Productivity/Mortality
 plt.figure(figsize=(4,3))
 plt.plot(bm_eq, x_eq, color='red')
 plt.scatter(bm[1000:,], T[1000:,], s=0.1, color='black')
