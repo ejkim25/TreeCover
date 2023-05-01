@@ -241,7 +241,7 @@ for j, P0 in enumerate(P0_range):
         A_y = 1.0*alpha*(k_slope**2)
         B_y = alpha*k_slope*(2.0*(P0-P1)-(1.0-mort)*k_slope)
         C_y = alpha*(P0-P1)*(1.0*(P0-P1)-2*k_slope*(1.0-mort))
-        D_y = mort*np.exp(2*gamma*delta)-alpha*(1.0-mort)*(P0-P1)**2
+        D_y = mort*np.exp(2*gamma)-alpha*(1.0-mort)*(P0-P1)**2
         #sol_y = np.roots([A_y,B_y,C_y,D_y])
         for n, dt in enumerate(np.diff(time), 0):
             P0_y[n+1,i,j] = P0 + nu*np.random.normal(0, np.sqrt(time[-1]/time.size))
@@ -272,7 +272,7 @@ for j, P0 in enumerate(P0_range):
         A_z = 1.0*alpha*(k_slope**2)
         B_z = alpha*k_slope*(2.0*(P0-P1)-(1.0-mort)*k_slope)
         C_z = alpha*(P0-P1)*(1.0*(P0-P1)-2*k_slope*(1.0-mort))
-        D_z = mort*np.exp(2*gamma*delta)-alpha*(1.0-mort)*(P0-P1)**2
+        D_z = mort*np.exp(2*gamma)-alpha*(1.0-mort)*(P0-P1)**2
         #sol_z = np.roots([A_z,B_z,C_z,D_z])
         for n, dt in enumerate(np.diff(time), 0):
             P0_z[n+1,i,j] = P0 + nu*np.random.normal(0, np.sqrt(time[-1]/time.size))
