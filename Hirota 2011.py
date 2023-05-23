@@ -1,51 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[108]:
-
-
-# From Dr. Sebastian Bathiany
-import numpy as np
-import matplotlib.pyplot as plt
-
-def dxdt(x, P):
-    a=0.05
-    b1=20
-    b2=50
-    b3=80
-    c=2000
-    return -a*(x-b1)*(x-b2)*(x-b3)-c+P
-
-#solve ODE:
-dt=0.001
-N=100
-x=np.zeros(N)
-
-Pmean=2000
-
-#from below:
-x[0]=0
-for i in range(0, N-1):
-    P=Pmean+np.sqrt(dt)*np.random.normal(0,1)  # same as: P=Pmean+np.random.normal(0,np.sqrt(dt))
-    x[i+1]=x[i]+dxdt(x[i],P)*dt+np.sqrt(dt)*np.random.normal(0,1)
-
-plt.plot(x)
-
-#from above:
-x[0]=100
-for ind in range(0,N-1):
-    #print(ind)
-    P=Pmean+np.sqrt(dt)*np.random.normal(0,1)
-    x[ind+1]=x[ind]+dxdt(x[ind],P)*dt+np.sqrt(dt)*np.random.normal(0,1)
-
-plt.plot(x)
-
-
 # ### This is the final picture of simulation of Hirota 2011:
-
-# In[1]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 #%matplotlib inline
