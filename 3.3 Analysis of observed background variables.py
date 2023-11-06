@@ -49,7 +49,7 @@ SD = SoilDepth_Rawdata.variables['soild'][:]
 #print('===== SoilMoist_Rawdata =====:\n', SoilMoist_Rawdata)
 #print('===== SoilDepth_Rawdata =====:\n', SoilDepth_Rawdata)
 
-
+# ==================================================================================
 # #### Figure 3.9 Data observation on the map of South America
 
 # In[ ]:
@@ -157,7 +157,7 @@ plot_map(SM, SM_lat_values, SM_lon_values, 'SM', 'Soil Moisture [m3/m3]', 'Soil 
 plot_map(PET, EV_lat_values, EV_lon_values, 'PET', 'PET [mm/yr]', 'PET in South America')
 #plot_map(EV, EV_lat_values, EV_lon_values, 'EV', 'PET [mm/month]', 'PET in South America')
 
-
+# ==================================================================================
 # #### Figure 3.10 Frequency distribution of the dataset of each variable
 
 # In[ ]:
@@ -209,7 +209,7 @@ plt.ylabel('Frequency', weight='bold')
 plt.title('Soil Depth frequency', weight='bold')
 plt.show()
 
-
+# ==================================================================================
 # #### Figure 3.11 Scatter plot of the dataset between tree cover and one of other variables
 
 # In[ ]:
@@ -264,7 +264,7 @@ plt.ylabel('Tree Cover [%]', weight='bold')
 plt.ylim(-5, 105)
 plt.show()
 
-
+# ==================================================================================
 # #### Figure 3.12 Scatter plot of the dataset between tree cover and precipitation with third variable in color scale
 
 # In[ ]:
@@ -317,7 +317,7 @@ cbar = plt.colorbar(extend='max')
 cbar.set_label('Soil Depth [m]', weight='bold')
 plt.show()
 
-
+# ==================================================================================
 # #### Figure 3.13 Scatter plot of the dataset between precipitation and one of other variables
 
 # In[ ]:
@@ -362,7 +362,7 @@ plt.ylabel('Precipitation [mm/yr]', weight='bold')
 plt.ylim(-200, 4200)
 plt.show()
 
-
+# ==================================================================================
 # #### Figure 3.14 Distribution of the variable in the intermediate range of precipitation 1700-2100 mm/year
 
 # In[ ]:
