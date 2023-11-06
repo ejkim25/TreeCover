@@ -3,10 +3,8 @@
 
 # (1) Tree cover with a step function:
 
+# =================================================================================
 # #### Figure 3.3 Trimodal tree cover distribution with tree cover in step function
-
-# In[ ]:
-
 
 import numpy as np
 import seaborn as sns
@@ -35,7 +33,7 @@ def X1X2_scatter(ax, x1, x2, title, fontsize=11):
     ax.set_ylim(0,1)
     plt.colorbar(CT, location='right', label='Tree Cover [%]')
 
-# Data ===========================================================================
+# Data ----------------------------------------------------------------------------
 # Make data for contour
 X1 = np.linspace(0, 1, 100)
 X2 = np.linspace(0, 1, 100)               
@@ -50,7 +48,7 @@ dataX1 = np.random.normal(meanX1, stdX1, N)
 dataX2 = np.random.normal(meanX2, stdX2, N)   
 dataTEQ, dataTEQ1, dataTEQ2 = Teq(dataX1, dataX2)
 
-# Graph ==========================================================================
+# Graph ---------------------------------------------------------------------------
 # Plot the 3D surface
 fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
 surf = ax.plot_surface(X1v, X2v, TEQ, cmap='viridis', linewidth=0, antialiased=False)
@@ -89,11 +87,8 @@ plt.ylabel('Frequency', fontsize=12)
 plt.tight_layout()
 plt.show()
 
-
+# ===============================================================================
 # #### Figure A.5 Sensitivity analysis 1
-
-# In[ ]:
-
 
 import numpy as np
 import seaborn as sns
@@ -139,7 +134,7 @@ def TreecoverDistrib(ax, dataTEQ, fontsize=12):
     ax.set_xlabel('Tree cover fraction', fontsize=fontsize)
     ax.set_ylabel('Frequency', fontsize=fontsize)
 
-# Graph ==========================================================================
+# Graph ---------------------------------------------------------------------------
 
 a1l_array = [0.05, 0.25, 0.45, 0.65]
 for a1l in a1l_array:
@@ -164,11 +159,10 @@ for a1l in a1l_array:
     TreecoverDistrib(ax3, dataTEQ)
     plt.show()
 
-
+# ================================================================================
 # #### Figure A.6 Sensitivity analysis 2
 
 # In[ ]:
-
 
 import numpy as np
 import seaborn as sns
@@ -214,7 +208,7 @@ def TreecoverDistrib(ax, dataTEQ, fontsize=12):
     ax.set_xlabel('Tree cover fraction', fontsize=fontsize)
     ax.set_ylabel('Frequency', fontsize=fontsize)
 
-# Graph ==========================================================================
+# Graph -----------------------------------------------------------------------
 
 a1h_array = [0.9, 0.7, 0.5, 0.3]
 for a1h in a1h_array:
@@ -239,11 +233,10 @@ for a1h in a1h_array:
     TreecoverDistrib(ax3, dataTEQ)
     plt.show()
 
-
+# ================================================================================
 # #### Figure A.7 Sensitivity analysis 3
 
 # In[ ]:
-
 
 import numpy as np
 import seaborn as sns
@@ -289,7 +282,7 @@ def TreecoverDistrib(ax, dataTEQ, fontsize=12):
     ax.set_xlabel('Tree cover fraction', fontsize=fontsize)
     ax.set_ylabel('Frequency', fontsize=fontsize)
 
-# Graph ==========================================================================
+# Graph -------------------------------------------------------------------------
 
 a1l_array = [0.05, 0.1, 0.2, 0.3]
 for a1l in a1l_array:
@@ -313,4 +306,3 @@ for a1l in a1l_array:
     X1X2_scatter(ax2, dataX1, dataX2, '$X_1, X_2$~$N$({}, {}\u00b2); $X_1 \perp X_2$'.format(meanX1, stdX1))
     TreecoverDistrib(ax3, dataTEQ)
     plt.show()
-
