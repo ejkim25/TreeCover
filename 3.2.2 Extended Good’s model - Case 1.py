@@ -40,7 +40,6 @@ def productivityPrec(p):       # productivity (beta) as a function of precipitat
 
     return betaP
 
-mort = 0.15 # only for the graph Productivity scatter; should be same as below
 def Teq(Temp, Prec):
     mort = 0.15
     prod = productivityTemp(Temp)*productivityPrec(Prec)
@@ -69,24 +68,7 @@ def TreeCover_hist(ax, treecover, title, fontsize=10):
     ax.set_ylabel('Frequency', fontsize=fontsize)
     ax.set_title(title, fontsize=12, loc='left', weight='bold')
     ax.set_xlim(0,1)
-    ax.set_ylim(0,500)
-    
-def Productivity_hist(ax, prod, title, fontsize=10):
-    ax.hist(prod, bins=20, alpha=0.5, color='green')
-    ax.set_xlabel('Productivity fraction', fontsize=fontsize)
-    ax.set_ylabel('Productivity frequency', fontsize=fontsize)
-    ax.set_title(title, fontsize=fontsize)
-    ax.set_xlim(0,1)
-    ax.set_ylim(0,500)
-
-def TreeCoverEQ_scatter(ax, bm, teq, title, fontsize=10):
-    ax.plot(bm_eq, x_eq, color='red') 
-    ax.scatter(bm, teq, s=10, color='black')
-    ax.set_xlabel('\u03B2/m', fontsize=fontsize)
-    ax.set_ylabel('Tree Cover', fontsize=fontsize)
-    ax.set_title(title, fontsize=fontsize)
-    ax.set_xlim(0,5)
-    ax.set_ylim(0,1)   
+    ax.set_ylim(0,500) 
 
 # Data -------------------------------------------------------------------------------    
 # Make data for contour
