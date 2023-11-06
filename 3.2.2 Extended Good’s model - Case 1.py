@@ -6,11 +6,7 @@
 # #### Figure 3.5 Outcome of Case 1
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import cm
-import matplotlib.mlab as mlab
-import plotly.express as pxb
 from matplotlib.offsetbox import AnchoredText
-from scipy.stats import skewnorm
 
 np.random.seed(123)
 
@@ -145,7 +141,6 @@ plt.show()
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from scipy.stats import skewnorm
 
 np.random.seed(123)
 
@@ -234,7 +229,6 @@ plt.show()
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from scipy.stats import skewnorm
 
 np.random.seed(123)
 
