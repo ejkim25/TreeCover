@@ -3,10 +3,10 @@
 
 # (2) Tree cover with a sigmoid function
 
+# ====================================================================================
 # #### Figure 3.4 Multimodal tree cover distribution with tree cover function with sigmoid curve
 
 # In[ ]:
-
 
 import numpy as np
 import seaborn as sns
@@ -31,7 +31,7 @@ def X1X2_scatter(ax, x1, x2, title, fontsize=11):
     ax.set_ylim(0,1)
     plt.colorbar(CT, location='right', label='Tree Cover [%]')
 
-# Data ===========================================================================    
+# Data -------------------------------------------------------------------------    
 # Make data for contour
 X1 = np.linspace(0, 1, 100)
 X2 = np.linspace(0, 1, 100)               
@@ -46,7 +46,7 @@ dataX1 = np.random.normal(meanX1, stdX1, N)
 dataX2 = np.random.normal(meanX2, stdX2, N)
 dataTEQ, dataTEQ1, dataTEQ2 = Teq(dataX1, dataX2)
 
-# Graph ==========================================================================
+# Graph --------------------------------------------------------------------------
 # X1 vs. X2 scatter
 fig, ((ax1)) = plt.subplots(figsize=(4,3), nrows=1, ncols=1)
 X1X2_scatter(ax1, dataX1, dataX2, '$X_1, X_2$~$N$({}, {}\u00b2); $X_1 \perp X_2$'.format(meanX1, stdX1))
@@ -75,11 +75,10 @@ plt.ylabel('Frequency', fontsize=12)
 plt.tight_layout()
 plt.show()
 
-
+# ====================================================================================
 # #### Figure A.8 Sensitivity analysis
 
 # In[ ]:
-
 
 import numpy as np
 import seaborn as sns
@@ -122,7 +121,7 @@ def TreecoverDistrib(ax, dataTEQ, fontsize=12):
     ax.set_xlabel('Tree cover fraction', fontsize=fontsize)
     ax.set_ylabel('Frequency', fontsize=fontsize)
 
-# Graph ==========================================================================
+# Graph ----------------------------------------------------------------------------
 
 b13_array = [26, 16, 10, 6]
 for b13 in b13_array:
