@@ -7,10 +7,6 @@
 get_ipython().system('pip install netCDF4')
 get_ipython().system('pip install basemap')
 
-
-# In[2]:
-
-
 import scipy.io
 import numpy as np
 import pandas as pd
@@ -51,9 +47,6 @@ SD = SoilDepth_Rawdata.variables['soild'][:]
 
 # ==================================================================================
 # #### Figure 3.9 Data observation on the map of South America
-
-# In[ ]:
-
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -160,9 +153,6 @@ plot_map(PET, EV_lat_values, EV_lon_values, 'PET', 'PET [mm/yr]', 'PET in South 
 # ==================================================================================
 # #### Figure 3.10 Frequency distribution of the dataset of each variable
 
-# In[ ]:
-
-
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -211,9 +201,6 @@ plt.show()
 
 # ==================================================================================
 # #### Figure 3.11 Scatter plot of the dataset between tree cover and one of other variables
-
-# In[ ]:
-
 
 import numpy as np
 import seaborn as sns
@@ -267,15 +254,12 @@ plt.show()
 # ==================================================================================
 # #### Figure 3.12 Scatter plot of the dataset between tree cover and precipitation with third variable in color scale
 
-# In[ ]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 
 # Temperature in color scale
 plt.figure(figsize=(4,3))
-plt.scatter(PR, np.where(TC>0, TC, np.nan), s=1, c=TM, cmap='seismic')
+plt.scatter(PR, np.where(TC>0, TC, np.nan), s=1, c=TM, cmap='viridis')
 plt.xlim(-100, 4100)
 plt.ylim(-5, 105)
 plt.xlabel('Precipitation [mm/yr]', weight='bold')
@@ -286,7 +270,7 @@ plt.show()
 
 # PET in color scale
 plt.figure(figsize=(4,3))
-plt.scatter(PR, np.where(TC>0, TC, np.nan), s=1, c=PET, cmap='seismic')
+plt.scatter(PR, np.where(TC>0, TC, np.nan), s=1, c=PET, cmap='viridis')
 plt.xlim(-100, 4100)
 plt.ylim(-5, 105)
 plt.xlabel('Precipitation [mm/yr]', weight='bold')
@@ -297,7 +281,7 @@ plt.show()
 
 # Soil moisture in color scale
 plt.figure(figsize=(4,3))
-plt.scatter(PR, np.where(TC>0, TC, np.nan), s=1, c=SM, cmap='seismic')
+plt.scatter(PR, np.where(TC>0, TC, np.nan), s=1, c=SM, cmap='viridis')
 plt.xlim(-100, 4100)
 plt.ylim(-5, 105)
 plt.xlabel('Precipitation [mm/yr]', weight='bold')
@@ -308,7 +292,7 @@ plt.show()
 
 # Soil depth in color scale
 plt.figure(figsize=(4,3))
-plt.scatter(PR, np.where(TC>0, TC, np.nan), s=1, c=SD, cmap='seismic')
+plt.scatter(PR, np.where(TC>0, TC, np.nan), s=1, c=SD, cmap='viridis')
 plt.xlim(-100, 4100)
 plt.ylim(-5, 105)
 plt.xlabel('Precipitation [mm/yr]', weight='bold')
