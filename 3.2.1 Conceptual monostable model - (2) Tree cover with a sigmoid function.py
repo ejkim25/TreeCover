@@ -22,7 +22,7 @@ def Teq(x1, x2):
     return Teqf, Teq1, Teq2
      
 def X1X2_scatter(ax, x1, x2, title, fontsize=11):
-    CT=ax.contourf(X1v, X2v, TCF, 20)
+    CT=ax.contourf(X1v, X2v, TEQ, 20)
     ax.scatter(x1, x2, s=1, color='black')
     ax.set_xlabel('$X_1$', fontsize=fontsize)
     ax.set_ylabel('$X_2$', fontsize=fontsize)
